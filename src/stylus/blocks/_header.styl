@@ -1,0 +1,28 @@
+.Header
+  background-image linear-gradient(to bottom, #032a7a, #2d80c3)
+  padding-top 6.2rem
+  padding-bottom 20rem
+  &__logo
+    text-align center
+    margin 0 auto
+    margin-bottom 8rem
+    & img
+      height 17.5rem
+  &__heading
+    font-weight: 300
+    font-size: 6.4rem
+    margin 0 auto
+    color #3CA1E3
+    text-align center
+    text-transform: uppercase
+
+@media (max-width: 1000px)
+  .Header__logo img
+    height 15.5
+  .Header__heading
+    width: 50%
+@media (max-width: 667px)
+  .Header
+    padding-bottom 34rem
+  .Header__heading
+    display none

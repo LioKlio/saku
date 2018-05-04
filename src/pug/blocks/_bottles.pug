@@ -1,0 +1,41 @@
+.Bottles
+  .g-wrapper
+    .Bottles__container
+
+
+      .Bottles__bottle
+        .Bubbles
+          - for (var x = 1; x < 6; x++)
+            .bubble(class="bubble"+x)
+
+        .Bottles__layer.Bottles__layer_orange.Bottles__layer_fit
+        img.Bottles__image(src="images/bottle1.png")
+        .Bottles__layer.Bottles__layer_orange.Bottles__textlayer
+          .Bottles__content
+            .Bottles__heading Apelsinimahla
+            .Bottles__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut nibh ultricies, efficitur velit at, volutpat metus. Etiam dapibus nisi tellus, vitae tempus nisi porttitor nec.
+          .Bottles__dots.Dots.Dots_right
+            .Dots__item.Dots__item_last_left
+            .Dots__item.Dots__item_middle_left
+            .Dots__item
+            .Dots__item.Dots__item_middle_left
+            .Dots__item.Dots__item_last_left
+
+
+      .Bottles__bottle
+        .Bubbles
+          - for (var x = 16; x < 21; x++)
+            .bubble(class="bubble"+x)
+
+        .Bottles__layer.Bottles__layer_red.Bottles__textlayer
+          .Bottles__content
+            .Bottles__heading Greibimahla
+            .Bottles__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut nibh ultricies, efficitur velit at, volutpat metus. Etiam dapibus nisi tellus, vitae tempus nisi porttitor nec.
+          .Bottles__dots.Dots.Dots_left
+            .Dots__item.Dots__item_last_right
+            .Dots__item.Dots__item_middle_right
+            .Dots__item
+            .Dots__item.Dots__item_middle_right
+            .Dots__item.Dots__item_last_right
+        img.Bottles__image(src="images/bottle2.png")
+        .Bottles__layer.Bottles__layer_red.Bottles__layer_fit

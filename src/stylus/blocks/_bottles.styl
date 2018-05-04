@@ -1,0 +1,156 @@
+random(min,max)
+  return floor(math(0, 'random')*(max - min + 1) + min)
+randomT(min,max)
+  return floor(math(0, 'random')*(max - min + 1) + min)s
+
+.Bottles
+  background-image: linear-gradient(to bottom, #89bef7, #fff)
+  padding-top 1px
+  padding-bottom 15rem
+  &__container
+    margin-top -45rem
+    display flex
+    justify-content space-between
+    z-index 1
+    position relative
+  &__layer
+    width 9rem
+    height 21.5rem
+    position relative
+    z-index -1
+    &_orange
+      background-color #FA9320
+    &_red
+      background-color #E6112D
+  &__textlayer
+    width 0
+    padding 2rem 4rem
+    transition width .5s
+    will-change: width
+    overflow hidden
+  &__image
+    width 14.7rem
+    transform translateY(7rem)
+    margin 0 -.4rem
+    filter: drop-shadow(0 0 20px darken(#032a7a, 50%));
+    z-index 100
+  &__bottle
+    display flex
+    justify-content center
+    align-items flex-end
+    position relative
+    &:hover .Dots__item
+      transform: translateX(0)
+    &:hover .Bottles__textlayer
+      width 26rem
+      transform: translateX(0)
+    &:hover .Bottles__content
+      opacity 1
+      transition: opacity .3s .5s
+  &__content
+    overflow hidden
+    opacity 0
+  &__heading
+    font-weight: bold
+    font-size: 2.4rem
+    color #fff
+    margin-bottom 1.2rem
+  &__text
+    font-size: 1.4rem
+    color #fff
+    font-weight: 300
+
+.Dots
+  position absolute
+  top 60%
+  bottom 2rem
+  width 10px
+  display flex
+  flex-direction: column
+  justify-content space-around
+  &_right
+    right 1.6rem
+  &_left
+    left 1.6rem
+  &__item
+    width .9rem
+    height .9rem
+    background-color #fff
+    opacity 0.6
+    border-radius: 50%
+    transition transform .5s
+    will-change: transform
+    &_last
+      &_left
+        transform translateX(-2rem)
+      &_right
+        transform translateX(2rem)
+    &_middle
+      &_left
+        transform translateX(-1rem)
+      &_right
+        transform translateX(1rem)
+
+.Bubbles
+  position absolute
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  z-index 1
+
+  & .bubble
+    border-radius 50%
+    background-color #ecf4fd
+    position absolute
+
+  for $i in (1..20)
+    .bubble{$i}
+      width random(50, 200)px
+      height @width
+      left random(-40, 300)px
+      bottom random(0, 40)px
+      animation randomT(4, 8) gogo+$i linear infinite
+      will-change: transform
+
+    @keyframes gogo{$i}
+      0%
+        opacity: 0
+        transform: translateY(0) scale(.7)
+      10%
+        opacity: .3
+      90%
+        opacity: .3
+        transform: translateY(random(-162, -180)px) scale(1)
+      100%
+        opacity: 0
+        bottom: random(0, 60)rem
+        transform: translateY(random(-180, -200)px) scale(1.6)
+
+  for $i in (11..20)
+    .bubble{$i}
+      left auto
+      right random(-40, 300)px
+
+  for $i in (6..15)
+    .bubble{$i}
+      bottom random(0, 300)px
+      background-color #89bef7
+      opacity .3
+      animation: none
+
+@media (max-width: 667px)
+  .Bottles__layer_fit
+    display none
+  .Bottles__container
+    justify-content: center;
+
+  .Bubbles
+    for $i in (1..20)
+      .bubble{$i}
+        width random(30, 100)px
+        height @width
+        left random(-40, 400)px
+        bottom random(0, 40)px
+
+
